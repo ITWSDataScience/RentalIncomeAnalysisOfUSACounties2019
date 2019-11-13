@@ -9,5 +9,5 @@ Links to original datasets:
   
     US rent estimates by County(2016) - https://www.huduser.gov/portal/datasets/50per.html#2016
   
-    US income by County(2016) - 
+    US income by County(2016) - https://data.world/tylerudite/2015-median-income-by-county
 
