@@ -1,0 +1,8 @@
+Sources:
+https://data.world/tylerudite/2015-median-income-by-county
+https://www.kaggle.com/mikejohnsonjr/united-states-crime-rates-by-county
+https://www.huduser.gov/portal/datasets/50per.html#2016
+
+Transformations:
+Initially, crime has 3136 rows, income has 3220 rows, and rent has 4770 rows
+There are supposed to be 3142 counties in the United States
