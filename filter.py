@@ -2,7 +2,7 @@
 import pandas as pd
 pd.options.mode.chained_assignment = None
 
-rawRent = pd.read_csv("./Data/FY2016F_50_RevFinal.csv")
+rawRent = pd.read_csv("./Datasets/Original datasets/FY2016F_50_RevFinal.csv")
 countyNames = rawRent["countyname"]
 lastState = countyNames[countyNames == "Weston County"].index[0]
 rawRent = rawRent.iloc[:lastState+1]
@@ -54,4 +54,4 @@ for key in grouped.groups.keys():
 # %% Save it
 filteredRent.sort_values(['state_alpha', 'countyname'], inplace=True)
 filteredRent.index = range(filteredRent.shape[0])
-filteredRent.to_csv("./Data/filtered_FY_2016F_50_RevFinal.csv", index=False)
+filteredRent.to_csv("./Datasets/Synthesized datasets/filtered_FY_2016F_50_RevFinal.csv", index=False)
