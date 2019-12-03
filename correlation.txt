@@ -1,0 +1,6 @@
+mydata <- read.csv("analysis_county_data.csv", header=TRUE, nrows=3131)
+
+income <- as.numeric(mydata$Median_household_income)
+rent <- as.numeric(mydata$Rent50_0)
+
+print(cor(rent, income))
