@@ -1,3 +1,7 @@
+#How to run in an R interpreter
+#setwd("location_of_dataset_below")
+#source(file = "correlation.txt")
+
 mydata <- read.csv("analysis_county_data.csv", header=TRUE, nrows=3131)
 
 income <- as.numeric(mydata$Median_household_income)
