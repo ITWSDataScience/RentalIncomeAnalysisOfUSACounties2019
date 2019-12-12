@@ -3,8 +3,18 @@
 #source(file = "correlation.txt")
 
 mydata <- read.csv("analysis_county_data.csv", header=TRUE, nrows=3131)
+mydata$crime_rate_per_100000 <- as.numeric(mydata$crime_rate_per_100000)
 
 income <- as.numeric(mydata$Median_household_income)
 rent <- as.numeric(mydata$Rent50_0)
 
+
+mydata <- mydata[mydata$crime_rate_per_100000 != 0,]
+
+
+crime <- as.numeric(mydata$crime_rate_per_100000)
+rentincome <- as.numeric(mydata$RentPercentOfIncome)
+
 print(cor(rent, income))
+
+print(cor(crime,rentincome))
