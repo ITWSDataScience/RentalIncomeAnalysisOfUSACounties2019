@@ -18,3 +18,7 @@ rentincome <- as.numeric(mydata$RentPercentOfIncome)
 print(cor(rent, income))
 
 print(cor(crime,rentincome))
+
+#results:
+#rent-income correlation = 0.5680223
+#rent/income-crime correlation = 0.3013634
