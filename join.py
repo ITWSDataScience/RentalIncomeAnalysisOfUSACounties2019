@@ -2,8 +2,11 @@
 import pandas as pd
 
 crime = pd.read_csv("./Datasets/Original datasets/crime_data_w_population_and_crime_rate.csv")
+print(len(crime))
 income = pd.read_csv("./Datasets/Original datasets/median_income.csv")
+print(len(income))
 rent = pd.read_csv("./Datasets/Synthesized datasets/filtered_FY_2016F_50_RevFinal.csv")
+print(len(rent))
 
 # %% add a dummy column for county, state to join on
 incomeJoin = pd.Series( [income.iloc[i]["County"] + ", "+income.iloc[i]["State Code"] for i in range(len(income))] )

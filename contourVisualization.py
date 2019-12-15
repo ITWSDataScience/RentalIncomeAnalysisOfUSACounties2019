@@ -5,17 +5,18 @@ from matplotlib import cm
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
 
 df = pd.read_csv("./Datasets/Synthesized datasets/analysis_county_data.csv")
+df = df[df["crime_rate_per_100000"] != 0]
 
 rentSize = 10
 rentSplits = np.linspace(min(df["Rent50_0"]), max(df["Rent50_0"])+1, rentSize)
 incomeSize = 10
-incomeSplits = np.linspace(min(df["Median household income"]), max(df["Median household income"])+1, incomeSize)
+incomeSplits = np.linspace(min(df["Median_household_income"]), max(df["Median_household_income"])+1, incomeSize)
 incomeSplits = [round(x) for x in incomeSplits]
 
 matrix = np.zeros((rentSize-1, incomeSize-1))
 for i in range(len(df)):
     rent = df.iloc[i]["Rent50_0"]
-    income = df.iloc[i]["Median household income"]
+    income = df.iloc[i]["Median_household_income"]
     for j in range(1, rentSize+1):
         for k in range(1, incomeSize+1):
             if (rent >= rentSplits[j-1] and rent < rentSplits[j]) and (income >= incomeSplits[k-1] and income < incomeSplits[k]):
@@ -24,7 +25,7 @@ for i in range(len(df)):
 matrix2 = np.zeros((rentSize-1, incomeSize-1))
 for i in range(len(df)):
     rent = df.iloc[i]["Rent50_0"]
-    income = df.iloc[i]["Median household income"]
+    income = df.iloc[i]["Median_household_income"]
     for j in range(1, rentSize+1):
         for k in range(1, incomeSize+1):
             if (rent >= rentSplits[j-1] and rent < rentSplits[j]) and (income >= incomeSplits[k-1] and income < incomeSplits[k]):
